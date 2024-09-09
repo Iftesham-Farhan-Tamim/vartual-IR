@@ -28,9 +28,12 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight">VirtualR</span>
+              <a href="#" className="flex">
+                <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
+                <span className="text-xl tracking-tight py-1.5">VirtualR</span>
+              </a>
           </div>
+
           {/* Desktop Menu */}
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
@@ -38,7 +41,7 @@ const Navbar = () => {
                 key={index}
                 href={`#${item.href}`} // Link to section ID
                 className={`text-sm ${index !== 0 ? "border-neutral-300/20 pl-2" : ""}`}
-              onClick={(e) => handleScroll(e, item.href)} // Scroll to section
+                onClick={(e) => handleScroll(e, item.href)} // Scroll to section
               >
                 {item.label}
               </a>
